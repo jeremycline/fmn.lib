@@ -8,3 +8,4 @@ html5lib
 markupsafe
 six
 SQLAlchemy>=0.8
+Twisted>=16.1.0
