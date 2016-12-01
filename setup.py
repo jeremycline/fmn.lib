@@ -1,18 +1,8 @@
 """ Setup file for fmn.lib """
 
 import sys
-import os
-import logging
 
 from setuptools import setup
-
-# Ridiculous as it may seem, we need to import multiprocessing and logging here
-# in order to get tests to pass smoothly on python 2.7.
-try:
-    import multiprocessing
-    import logging
-except:
-    pass
 
 
 def get_description():
@@ -43,7 +33,7 @@ if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
 
 
 setup(
-    name='fmn.lib',
+    name='fmn',
     version='0.8.2',
     description='Internal API components and model for Fedora Notifications',
     long_description=get_description(),
@@ -55,7 +45,7 @@ setup(
     install_requires=requires,
     tests_require=get_requirements('tests-requirements.txt'),
     test_suite='nose.collector',
-    packages=['fmn', 'fmn.lib'],
+    packages=['fmn', 'fmn.lib', 'fmn.rules'],
     namespace_packages=['fmn'],
     include_package_data=True,
     zip_safe=False,
